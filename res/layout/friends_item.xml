@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:paddingTop="6dip"
+    android:paddingBottom="6dip"
+    android:paddingLeft="10dip" >
+
+    <ImageView
+        android:id="@+id/friendsHead"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:src="@drawable/head00" />
+        
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView 
+                android:layout_height="wrap_content" 
+                android:layout_width="fill_parent" 
+                android:id="@+id/friendsName" 
+                android:textSize="18sp"
+                android:textColor="@color/show_time_text_color" />
+        <TextView 
+                android:layout_height="wrap_content" 
+                android:layout_width="fill_parent" 
+                android:id="@+id/friendsSign"
+                android:textSize="12sp"
+                android:textColor="@color/friends_sign_color"
+                android:layout_marginTop="3dp" />
+		
+        <TextView 
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/friendsUsername"
+            android:visibility="gone"/>
+        
+     </LinearLayout>
+
+</LinearLayout>

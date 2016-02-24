@@ -1,0 +1,29 @@
+<com.example.umemonew.BidirSlidingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bidir_sliding_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color" >
+
+    <include layout="@layout/layout_menu" />
+
+    <RelativeLayout
+        android:id="@+id/right_menu"
+        android:layout_width="270dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="320dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/bg_color"
+        android:orientation="vertical" >
+
+        <include layout="@layout/layout_fragment" />
+    </LinearLayout>
+
+</com.example.umemonew.BidirSlidingLayout>

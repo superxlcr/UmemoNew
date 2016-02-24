@@ -1,0 +1,265 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_remind_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.umemonew.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/title_input_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <EditText
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="@null"
+            android:hint="标题"
+            android:maxLength="8" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/timelayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignLeft="@+id/titleLayout"
+        android:layout_below="@+id/titleLayout"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/time_input_bg"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:text="时间提醒"
+                android:textSize="17sp" />
+
+            <Switch
+                android:id="@+id/timeSwitch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/dateButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="2014-11-26"
+                android:textColor="#8c8c8c" />
+
+            <Button
+                android:id="@+id/timeButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="23:22"
+                android:textColor="#8c8c8c" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/placelayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/timelayout"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/new_remind_place"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/placeShow"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="添加地点"
+                android:textColor="@color/remind_off_color"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/placeTextLayout"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/placeText"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text="无 "
+                    android:textColor="#878787"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text=">"
+                    android:textColor="#dad8e0"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_above="@+id/linearLayout3" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="地点提醒"
+                android:textSize="17sp" />
+
+            <Switch
+                android:id="@+id/placeSwitch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/meetinglayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/placelayout"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/new_remind_place"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/meetingShow"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="添加相遇对象"
+                android:textColor="@color/remind_off_color"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/meetingTextLayout"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/meetingText"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text="老马 "
+                    android:textColor="#878787"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text=">"
+                    android:textColor="#dad8e0"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_above="@+id/linearLayout4" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="相遇提醒"
+                android:textSize="17sp" />
+
+            <Switch
+                android:id="@+id/meetingSwitch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/notelayout"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:layout_below="@+id/meetinglayout"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/note_input_bg"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <EditText
+            android:id="@+id/noteText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@null"
+            android:gravity="left|start"
+            android:hint="备注"
+            android:maxLength="150" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

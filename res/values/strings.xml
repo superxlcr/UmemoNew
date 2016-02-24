@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="personal_info">个人资料</string>
+	<string name="textView1"><u>忘记密码</u></string>
+	<string name="textView2"><u>注册用户</u></string> 
+	
+	<string name="action_settings">设置</string>
+    <string name="action_new_file">新建提醒</string>
+    <string name="action_add_friends">添加好友</string>
+    <string name="action_feedback">意见反馈</string>
+    <string name="action_save">保存</string>
+    <string name="action_back">返回</string>
+    
+    <string name="group1">好友</string>
+	<string name="group2">群组</string>
+    <string name="setting">设置</string>
+
+    <string name="rename_hint">请在此处输入新标题</string>
+    
+    <string name="add_friends">添加好友</string>
+    <string name="add_groups">加入群组</string>
+    <string name="new_groups">创建群组</string>
+    
+    <string name="app_name">Umemo</string>
+    <string name="change_user">更换用户</string>
+    
+    <string name="sound">声音</string>
+    <string name="soundtype">铃声类型</string>
+    <string name="soundtypeturn">></string>
+    <string name="vibration">振动</string>
+    <string name="led_flicker">指示灯闪烁</string>
+    <string name="default_sound">default</string>
+    
+    <string name="edit">编辑资料</string>
+    <string name="register">确认</string>
+    <string name="check_image">选择您的头像</string>
+    <string name="username">用户名</string>
+    <string name="nickname">昵称</string>
+    <string name="signature">个性签名</string>
+    <string name="note">备注</string>
+    <string name="save_message">保存修改</string>
+    
+</resources>

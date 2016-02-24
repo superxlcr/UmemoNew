@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/notification_bg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mysocket.MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/userlayout_message"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" >
+
+        <ImageView
+            android:id="@+id/headimage_message"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/head00" />
+
+        <TextView
+            android:id="@+id/username_message"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="21dp"
+            android:layout_toRightOf="@+id/headimage_message"
+            android:text="noUser"
+            android:textColor="#ffffff"
+            android:textSize="21sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/titleLayout_message"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/userlayout_message"
+        android:layout_below="@+id/userlayout_message"
+        android:background="@drawable/title_input_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="昵称"
+            android:textColor="#616161"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/nameDetail"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="left|center_vertical"
+            android:text="TextView"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/remarkLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/titleLayout_message"
+        android:layout_below="@+id/titleLayout_message"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/title_input_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/remarkText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="9dp"
+            android:gravity="center"
+            android:text="备注"
+            android:textColor="#616161"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/remarkDetail"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:hint="请添加您的备注"
+            android:textSize="15sp" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:id="@+id/signatureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/remarkLayout"
+        android:background="@drawable/title_input_bg"
+        android:layout_below="@+id/remarkLayout"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <TextView
+            android:id="@+id/signatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="个性签名"
+            android:textColor="#616161"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/signature"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_vertical"
+            android:text="TextView"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/signatureLayout"
+        android:layout_below="@+id/signatureLayout"
+        android:layout_marginTop="19dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/refuse_btn"
+            android:text="拒绝"
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/receiveButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/agree_btn"
+            android:text="确定"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</RelativeLayout>

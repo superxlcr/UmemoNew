@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="show_date_margin">40sp</dimen>
+    <dimen name="show_weekday_margin">25sp</dimen>
+    
+    <dimen name="group_text_margin">18dp</dimen>
+    <dimen name="menu_bottom_margin">15dp</dimen>
+
+    <dimen name="rename">25dp</dimen>
+    
+</resources>
