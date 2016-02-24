@@ -11,6 +11,11 @@ import android.util.Log;
 import com.baidu.mapapi.SDKInitializer;
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author 方泽华 , 林坤煜
+ * 全局应用信息,初始化TCP连接以及百度地图SDK
+ */
 public class MainApplication extends Application{
 	public MyService TcpService;
 	public static MainApplication instance = null;

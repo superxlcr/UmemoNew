@@ -9,6 +9,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/***
+ * 
+ * @author 庄乐豪
+ * Umemo本地数据库
+ */
 public class UmemoDatabase extends SQLiteOpenHelper {
 	public UmemoDatabase(Context context, String name, int version) {
 		super(context, name, null, version);

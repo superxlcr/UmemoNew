@@ -25,6 +25,11 @@ import android.widget.Toast;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 
+/***
+ * 
+ * @author Superxlcr
+ * 相遇提醒界面碎片
+ */
 public class MeetingFragment extends Fragment {
 
 	private Context context=null;

@@ -22,6 +22,11 @@ import android.widget.Toast;
 import com.example.umemonew.MyService.MyBinder;
 
 //@SuppressLint("NewApi")
+/***
+ * 
+ * @author 林坤煜
+ * 添加好友界面
+ */
 public class AdditionActivity extends Activity {
 
 	private MyService TcpService;

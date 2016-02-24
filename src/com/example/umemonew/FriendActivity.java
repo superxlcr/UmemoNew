@@ -26,6 +26,11 @@ import android.widget.TextView;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author Superxlcr
+ * 查看好友详细信息界面
+ */
 public class FriendActivity extends Activity {
 	private MyService TcpService;
 	private Protocol protocol = null;
@@ -43,28 +48,29 @@ public class FriendActivity extends Activity {
 
 	private Drawable drawable;
 
-	private UmemoDatabase db=null;
+	private UmemoDatabase db = null;
 
-	private String friendName= "";
+	private String friendName = "";
 
 	private int state = 0;
 
-	private void connection(){			//connect a service
-		Intent intent=new Intent(FriendActivity.this,MyService.class);
-		bindService(intent,serviceConnection,Context.BIND_AUTO_CREATE);
-		Log.v("connection","connected");
+	private void connection() { // connect a service
+		Intent intent = new Intent(FriendActivity.this, MyService.class);
+		bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+		Log.v("connection", "connected");
 	}
 
-	private ServiceConnection serviceConnection=new ServiceConnection(){
+	private ServiceConnection serviceConnection = new ServiceConnection() {
 		@Override
-		public void onServiceDisconnected(ComponentName name){
-			Log.v("onServiceDisconnected","hello");
-			TcpService=null;
+		public void onServiceDisconnected(ComponentName name) {
+			Log.v("onServiceDisconnected", "hello");
+			TcpService = null;
 		}
+
 		@Override
-		public void onServiceConnected(ComponentName name,IBinder service){
-			Log.v("onServiceConnected","hello");
-			MyBinder binder = (MyBinder)service;
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			Log.v("onServiceConnected", "hello");
+			MyBinder binder = (MyBinder) service;
 			TcpService = binder.getService();
 		}
 	};
@@ -76,7 +82,7 @@ public class FriendActivity extends Activity {
 
 		connection();
 
-		db=new UmemoDatabase(this, "umemo.db3", 1);
+		db = new UmemoDatabase(this, "umemo.db3", 1);
 
 		ActionBar actionBar = getActionBar();
 		actionBar.setDisplayShowHomeEnabled(false);
@@ -89,18 +95,19 @@ public class FriendActivity extends Activity {
 
 		friendNote.setEnabled(false);
 
-		Map<String , String> friendMap = db.getFriendMessage(friendName);
+		Map<String, String> friendMap = db.getFriendMessage(friendName);
 		friendUsername.setText(friendName);
 		friendNickname.setText(friendMap.get("nickname"));
 		friendNote.setText(friendMap.get("note"));
 		friendSignature.setText(friendMap.get("signature"));
 		friendSignature.setSelected(true);
 
-		//得到application对象
+		// 得到application对象
 		ApplicationInfo appInfo = getApplicationInfo();
-		//得到该图片的id(name 是该图片的名字，drawable 是该图片存放的目录，appInfo.packageName是应用程序的包)
+		// 得到该图片的id(name 是该图片的名字，drawable 是该图片存放的目录，appInfo.packageName是应用程序的包)
 		String headId = friendMap.get("pictureid");
-		int resID = getResources().getIdentifier("head"+headId, "raw", appInfo.packageName);
+		int resID = getResources().getIdentifier("head" + headId, "raw",
+				appInfo.packageName);
 		imageView2.setImageResource(resID);
 
 		editNote.setOnClickListener(new OnClickListener() {
@@ -111,13 +118,15 @@ public class FriendActivity extends Activity {
 					state = 1;
 					friendNote.setEnabled(true);
 					friendNote.setBackground(drawable);
-					editNote.setBackground(getResources().getDrawable(R.drawable.blue_tick));
-				}
-				else {
+					editNote.setBackground(getResources().getDrawable(
+							R.drawable.blue_tick));
+				} else {
 					state = 0;
 					friendNote.setEnabled(false);
-					editNote.setBackground(getResources().getDrawable(R.drawable.edit));
-					db.changeFriendNote(friendName, friendNote.getText().toString());
+					editNote.setBackground(getResources().getDrawable(
+							R.drawable.edit));
+					db.changeFriendNote(friendName, friendNote.getText()
+							.toString());
 					friendSignature.setSelected(true);
 				}
 			}
@@ -127,24 +136,29 @@ public class FriendActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				AlertDialog.Builder dialog = new AlertDialog.Builder(FriendActivity.this);
+				AlertDialog.Builder dialog = new AlertDialog.Builder(
+						FriendActivity.this);
 				dialog.setTitle("确定删除？");
 				dialog.setMessage("您确定删除该好友吗？");
 				dialog.setCancelable(false);
-				dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				dialog.setPositiveButton("确定",
+						new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						db.deleteFriend(friendName);
-						FriendActivity.this.finish();
-					}
-				});
-				dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								db.deleteFriend(friendName);
+								FriendActivity.this.finish();
+							}
+						});
+				dialog.setNegativeButton("取消",
+						new DialogInterface.OnClickListener() {
 
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-					}
-				});
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+							}
+						});
 				dialog.show();
 			}
 		});
@@ -171,9 +185,9 @@ public class FriendActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
-		if(id == android.R.id.home)
+		if (id == android.R.id.home)
 			FriendActivity.this.finish();
-		else if(id == R.id.action_new_remind) {				
+		else if (id == R.id.action_new_remind) {
 			Intent intent = new Intent(this, FriendRemindActivity.class);
 			intent.putExtra("username", friendName);
 			this.startActivity(intent);
@@ -183,8 +197,7 @@ public class FriendActivity extends Activity {
 	}
 
 	@Override
-	public void onDestroy()
-	{
+	public void onDestroy() {
 		super.onDestroy();
 		if (db != null) {
 			db.close();

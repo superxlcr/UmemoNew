@@ -29,7 +29,11 @@ import android.widget.TextView;
 
 import com.example.umemonew.MyService.MyBinder;
 
-
+/***
+ * 
+ * @author Superxlcr
+ * 群组成员管理界面
+ */
 public class ManageGroupsActivity extends Activity {
 
 	private MyService TcpService;

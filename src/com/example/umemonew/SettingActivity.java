@@ -21,6 +21,11 @@ import android.widget.Spinner;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
 
+/***
+ * 
+ * @author ◊Ø¿÷∫¿
+ * …Ë÷√ΩÁ√Ê
+ */
 public class SettingActivity extends Activity {
 	
 	private Switch vibrationSwitch;

@@ -21,10 +21,15 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
-public class AdditionNotificationActivity extends Activity{
+/***
+ * 
+ * @author Superxlcr , 林坤煜
+ * 处理好友请求界面
+ */
+public class AdditionNotificationActivity extends Activity {
 
 	private MyService TcpService;
-	private Protocol protocol=null;
+	private Protocol protocol = null;
 
 	private Button verifyButton = null;
 	private Button refuseButton = null;
@@ -47,22 +52,21 @@ public class AdditionNotificationActivity extends Activity{
 
 		db = new UmemoDatabase(this, "umemo.db3", 1);
 
-		connection();				//every activity should add 
+		connection(); // every activity should add
 		findView();
 
-		bundle=getIntent().getExtras();
-		protocol=new Protocol();
+		bundle = getIntent().getExtras();
+		protocol = new Protocol();
 
-		message=bundle.getString("message");
+		message = bundle.getString("message");
 
 		setView(message);
 	}
 
-	private void setView(String message)
-	{
+	private void setView(String message) {
 		protocol.handleAdditionDetail(message);
 
-		//get all kinds of messages
+		// get all kinds of messages
 		String username = protocol.username_of_message;
 		String headId = protocol.head_number;
 		String nickname = protocol.nick_name;
@@ -70,35 +74,35 @@ public class AdditionNotificationActivity extends Activity{
 
 		usernameText.setText(username);
 
-		//得到application对象
+		// 得到application对象
 		ApplicationInfo appInfo = getApplicationInfo();
 		String picId = headId;
-		int resID = getResources().getIdentifier("head"+picId, "raw", appInfo.packageName);
+		int resID = getResources().getIdentifier("head" + picId, "raw",
+				appInfo.packageName);
 		headView.setImageResource(resID);
 
-		//headView
+		// headView
 		nameDetail.setText(nickname);
-		//		remarkDetail.setText(nickname);
+		// remarkDetail.setText(nickname);
 		signatureDetail.setText(signature);
 		verifyButton.setOnClickListener(handler);
 		refuseButton.setOnClickListener(handler);
 	}
 
-	private void findView()
-	{
-		usernameText = (TextView)findViewById(R.id.username_message);
-		verifyButton = (Button)findViewById(R.id.receiveButton);
-		refuseButton = (Button)findViewById(R.id.cancelButton);
-		nameDetail = (TextView)findViewById(R.id.nameDetail);
-		remarkDetail = (EditText)findViewById(R.id.remarkDetail);
-		signatureDetail = (TextView)findViewById(R.id.signature);
-		headView = (ImageView)findViewById(R.id.headimage_message);
+	private void findView() {
+		usernameText = (TextView) findViewById(R.id.username_message);
+		verifyButton = (Button) findViewById(R.id.receiveButton);
+		refuseButton = (Button) findViewById(R.id.cancelButton);
+		nameDetail = (TextView) findViewById(R.id.nameDetail);
+		remarkDetail = (EditText) findViewById(R.id.remarkDetail);
+		signatureDetail = (TextView) findViewById(R.id.signature);
+		headView = (ImageView) findViewById(R.id.headimage_message);
 	}
 
-	OnClickListener handler =new OnClickListener(){
+	OnClickListener handler = new OnClickListener() {
 		@Override
-		public void onClick(View v){
-			switch(v.getId()){
+		public void onClick(View v) {
+			switch (v.getId()) {
 			case R.id.receiveButton:
 				verify();
 				break;
@@ -112,80 +116,80 @@ public class AdditionNotificationActivity extends Activity{
 		}
 	};
 
-	private void verify()
-	{
+	private void verify() {
 		protocol.handleAdditionDetail(message);
 
 		String username = db.getNowUser();
-		Map<String , String> userMap = db.getLoginMessage(username);
+		Map<String, String> userMap = db.getLoginMessage(username);
 		String friendName = protocol.username_of_message;
 		String headImage = userMap.get("pictureid");
 		String nickName = userMap.get("nickname");
 		String signature = userMap.get("signature");
 
-		String message=protocol.generateAddition(username, 
-				friendName, headImage ,nickName, signature,'Y');
+		String message = protocol.generateAddition(username, friendName,
+				headImage, nickName, signature, 'Y');
 		sendMessage(message);
 
-		db.insertFriend(protocol.username_of_message, protocol.nick_name, protocol.head_number, protocol.signature, remarkDetail.getText().toString());
+		db.insertFriend(protocol.username_of_message, protocol.nick_name,
+				protocol.head_number, protocol.signature, remarkDetail
+						.getText().toString());
 		toastShow("好友已保存！");
 	}
 
 	// 封装Toast,一方面调用简单,另一方面调整显示时间只要改此一个地方即可.
-	public void toastShow(String text) {  
-		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();  
+	public void toastShow(String text) {
+		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 	}
 
-	private void refuse()
-	{
+	private void refuse() {
 		protocol.handleAdditionDetail(message);
 
-		//you should get the message below from the database
+		// you should get the message below from the database
 		String username = db.getNowUser();
-		Map<String , String> userMap = db.getLoginMessage(username);
+		Map<String, String> userMap = db.getLoginMessage(username);
 		String friendName = protocol.username_of_message;
 		String headImage = userMap.get("pictureid");
 		String nickName = userMap.get("nickname");
 		String signature = userMap.get("signature");
 
-		String message=protocol.generateAddition(username, 
-				friendName, headImage ,nickName, signature,'N');
+		String message = protocol.generateAddition(username, friendName,
+				headImage, nickName, signature, 'N');
 		sendMessage(message);
 	}
 
-	private void sendMessage(String message){
-		if(TcpService!=null)
+	private void sendMessage(String message) {
+		if (TcpService != null)
 			TcpService.sendMessage(message);
-		else Log.v("on click","is null");
+		else
+			Log.v("on click", "is null");
 	}
 
-
-	//this two part should be added into every activity
-	private void connection(){			//connect a service
-		Intent intent=new Intent(this,MyService.class);
-		bindService(intent,serviceConnection,Context.BIND_AUTO_CREATE);
-		Log.v("connection","connected");
+	// this two part should be added into every activity
+	private void connection() { // connect a service
+		Intent intent = new Intent(this, MyService.class);
+		bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+		Log.v("connection", "connected");
 	}
 
-	private ServiceConnection serviceConnection=new ServiceConnection(){
+	private ServiceConnection serviceConnection = new ServiceConnection() {
 		@Override
-		public void onServiceDisconnected(ComponentName name){
-			Log.v("onServiceDisconnected","hello");
-			TcpService=null;
+		public void onServiceDisconnected(ComponentName name) {
+			Log.v("onServiceDisconnected", "hello");
+			TcpService = null;
 		}
+
 		@Override
-		public void onServiceConnected(ComponentName name,IBinder service){
-			//			TcpService=((MyService.MyBinder)(service)).getService();
-			Log.v("onServiceConnected","hello");
-			MyBinder binder = (MyBinder)service;
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			// TcpService=((MyService.MyBinder)(service)).getService();
+			Log.v("onServiceConnected", "hello");
+			MyBinder binder = (MyBinder) service;
 			TcpService = binder.getService();
 			System.out.println(TcpService);
 		}
 	};
 
 	@Override
-	public void onDestroy()
-	{
+	public void onDestroy() {
 		super.onDestroy();
 		if (db != null) {
 			db.close();

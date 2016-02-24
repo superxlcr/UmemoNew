@@ -32,6 +32,11 @@ import android.widget.Toast;
 import com.example.umemonew.MyService.MyBinder;
 
 //@SuppressLint("NewApi")
+/***
+ * 
+ * @author Superxlcr , 林坤煜
+ * 新建好友提醒界面
+ */
 public class FriendRemindActivity extends Activity {
 
 	private Protocol protocol = null;

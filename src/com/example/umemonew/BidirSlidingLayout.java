@@ -11,6 +11,11 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+/***
+ * 
+ * @author 郭林
+ * 侧滑菜单
+ */
 public class BidirSlidingLayout extends RelativeLayout implements OnTouchListener {
 
 	/**

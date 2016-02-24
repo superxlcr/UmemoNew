@@ -30,6 +30,11 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author Superxlcr
+ * 新建群组界面
+ */
 public class NewGroupsActivity extends Activity{
 	private MyService TcpService;
 	private Protocol protocol = null;

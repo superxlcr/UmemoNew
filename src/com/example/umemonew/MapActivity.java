@@ -32,6 +32,11 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 
+/***
+ * 
+ * @author 方泽华
+ * 地图定位界面
+ */
 public class MapActivity extends Activity
 {	
 	private EditText placeTitle;

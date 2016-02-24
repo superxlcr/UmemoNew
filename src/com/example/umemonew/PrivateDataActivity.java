@@ -26,6 +26,11 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author 庄乐豪
+ * 个人资料界面
+ */
 public class PrivateDataActivity extends Activity {
 	private MyService TcpService;
 	private Protocol protocol = null;

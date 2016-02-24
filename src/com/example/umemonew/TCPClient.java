@@ -12,7 +12,11 @@ import java.net.SocketTimeoutException;
 import android.util.Log;
 
 
-
+/***
+ * 
+ * @author ¡÷¿§Ïœ
+ * TCPøÕªß∂À
+ */
 public class TCPClient {
 	
 	

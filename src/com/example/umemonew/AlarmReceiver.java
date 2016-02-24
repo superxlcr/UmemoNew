@@ -5,7 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 
 //Not used!
-
+/***
+ * 
+ * @author 林炜润
+ * 提醒广播接收器
+ */
 public class AlarmReceiver extends BroadcastReceiver{
 	@Override 
 	public void onReceive(Context context,Intent intent){

@@ -19,6 +19,11 @@ import android.widget.Toast;
 //If anyone modify something here, I will hit him! 
 
 @SuppressLint("NewApi")				//very important
+/***
+ * 
+ * @author 林坤煜
+ * 后台连接服务
+ */
 public class MyService extends Service{
 
 	private UmemoDatabase db;

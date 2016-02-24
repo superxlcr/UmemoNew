@@ -19,6 +19,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author Superxlcr
+ * ∫√”—¡–±ÌÀÈ∆¨
+ */
 public class FriendsFragment extends Fragment {
 
 	private Context context=null;

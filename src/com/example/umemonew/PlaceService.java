@@ -22,7 +22,11 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
-
+/***
+ * 
+ * @author 方泽华
+ * 地理位置提醒服务
+ */
 public class PlaceService extends Service
 {
 	private Vibrator mVibrator;

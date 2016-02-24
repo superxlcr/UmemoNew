@@ -10,6 +10,11 @@ import java.net.Socket;
 
 import android.util.Log;
 
+/***
+ * 
+ * @author 林坤煜
+ * 用于注册的TCP客户端
+ */
 public class TcpClientLogin {
 	
     //Declare the interface. The method messageReceived(String message) will must be implemented in the MyActivity

@@ -23,6 +23,11 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author Superxlcr , 林坤煜
+ * 消息确认界面
+ */
 public class MessageNotificationActivity extends Activity{
 
 	private MyService TcpService;

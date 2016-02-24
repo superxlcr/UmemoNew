@@ -24,7 +24,11 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
-
+/***
+ * 
+ * @author Superxlcr , 林坤煜
+ * 登陆主界面
+ */
 public class LoginActivity extends Activity {
 
 	private MyService TcpService;

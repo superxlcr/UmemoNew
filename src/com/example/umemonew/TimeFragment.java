@@ -28,6 +28,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author Superxlcr
+ * 时间提醒界面碎片
+ */
 public class TimeFragment extends Fragment {
 
 	private Context context=null;

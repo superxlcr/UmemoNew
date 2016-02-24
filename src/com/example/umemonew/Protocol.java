@@ -1,5 +1,10 @@
 package com.example.umemonew;
 
+/***
+ * 
+ * @author 林坤煜
+ * socket通信格式协议
+ */
 public class Protocol {
 	private static final String head_of_username="username:";
 	private static final String head_of_sendmsgs="sendmsgs:";

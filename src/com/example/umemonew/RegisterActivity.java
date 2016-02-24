@@ -19,6 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 @SuppressLint("NewApi")
+/***
+ * 
+ * @author Superxlcr , ÁÖÀ¤ìÏ
+ * ×¢²á½çÃæ
+ */
 public class RegisterActivity extends Activity {
 
 	private Button registerButton = null;

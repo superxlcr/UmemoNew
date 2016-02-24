@@ -11,6 +11,11 @@ import android.util.Log;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author ¡÷Ïø»Û
+ * ≤‚ ‘ΩÁ√Ê
+ */
 public class TestActivity extends Activity {
 	private MyService TcpService;
 	private Protocol protocol = null;

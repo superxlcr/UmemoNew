@@ -37,6 +37,11 @@ import android.widget.Toast;
 
 import com.example.umemonew.MyService.MyBinder;
 
+/***
+ * 
+ * @author Superxlcr
+ * 主界面
+ */
 public class SecondActivity extends Activity implements OnClickListener {
 	private MyService TcpService;
 	private Protocol protocol = null;

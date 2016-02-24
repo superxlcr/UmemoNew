@@ -29,6 +29,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author Superxlcr
+ * 地点提醒列表界面碎片
+ */
 public class PlaceFragment extends Fragment {
 
 	private Context context=null;

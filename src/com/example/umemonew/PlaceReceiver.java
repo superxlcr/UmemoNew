@@ -5,6 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author 方泽华
+ * 地理位置广播接收器
+ */
 public class PlaceReceiver extends BroadcastReceiver {
 	@Override	
 	public void onReceive(Context context,Intent intent){

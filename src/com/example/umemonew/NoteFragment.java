@@ -28,6 +28,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author Superxlcr
+ * 简单备忘界面碎片
+ */
 public class NoteFragment extends Fragment {
 	private Context context=null;
 

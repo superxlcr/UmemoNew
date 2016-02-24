@@ -22,6 +22,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/***
+ * 
+ * @author Superxlcr
+ * 群组列表碎片
+ */
 public class GroupsFragment extends Fragment {
 
 	private Context context=null;

@@ -34,7 +34,11 @@ import android.widget.Toast;
 import com.baidu.mapapi.SDKInitializer;
 import com.example.umemonew.MyService.MyBinder;
 
-
+/***
+ * 
+ * @author Superxlcr
+ * 新建提醒界面
+ */
 public class NewRemindActivity extends Activity {
 
 	private MyService TcpService;

@@ -14,6 +14,11 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+/***
+ * 
+ * @author 林炜润
+ * 自定义开机锁屏界面
+ */
 public class MyRelativeLayout extends RelativeLayout {
 
 	private static final int LEFT_DISTANCE = 20;// 滑动图片的X坐标到屏幕的边，即X坐标的值，或者说滑动图片的滑动区域到屏幕左边框的距离。
