@@ -7,4 +7,6 @@ Umemo是一款特别的智能备忘录。我们在生活中可能会忘记各种
 ## 荣获奖项
 中山大学第十届软件创新开发大赛一等奖
 
-由于现在服务器已经关闭，因此只提供单词版本下载体验：https://github.com/superxlcr/UmemoNew/blob/master/bin/UmemoNew.apk
+## 其他事项
+最低Android版本：4.1
+由于现在服务器已经关闭，因此只提供单机版本下载体验：https://github.com/superxlcr/UmemoNew/blob/master/bin/UmemoNew.apk
