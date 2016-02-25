@@ -115,15 +115,16 @@ public class MyService extends Service{
 		
 		protocol=new Protocol();
 
-		conctTask = new connectTask();
-		Log.v("onCreate","conctTask");
-
-		conctTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-
-		Log.v("MyService","service is created!");
-
-		startHeartBeatThread();
-		checkThread();
+		// 单机版本不需要心跳以及检查是否掉线
+//		conctTask = new connectTask();
+//		Log.v("onCreate","conctTask");
+//
+//		conctTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//
+//		Log.v("MyService","service is created!");
+//
+//		startHeartBeatThread();
+//		checkThread();
 		
 		instance = this;
 	}
@@ -196,6 +197,36 @@ public class MyService extends Service{
 		}
 	}
 
+	// 增加一个公共处理连接信息的方法用来手动处理消息
+	public void handleConnection(String message) {
+		if(message.equals("heartbeat!")) 
+		{	
+			//Don't modify this part!
+			Log.v("onProgerssUpdate","get a heartbeat");
+//			makeToast("heartbeat!");
+			mTcpClient.timer++;
+		}
+		else if(message.equals("No such person!")){
+			makeToast("找不到该用户");
+		}
+		else if(message.equals("login success")){
+//			makeToast("登录成功");
+		}
+		else if(message.equals("send success!")){
+			makeToast("发送成功");
+		}
+		else if(message.length() >= 13){
+			int taskNum = protocol.differMessage(message);
+			String realMessage = message.substring(9);
+			if(taskNum == 1){
+				handleMessage(realMessage);
+			}
+			else if(taskNum == 2){
+				handleAddition(realMessage);
+			}
+		}
+	}
+	
 	private void handleMessage(String message){
 		makeToast("您有一条新消息");
 		setNotification(message,0);
@@ -203,6 +234,7 @@ public class MyService extends Service{
 
 	private void handleAddition(String message){
 		
+		Log.v("MyService", message);
 		int messageLen = message.length();
 		if(message.charAt(messageLen-1)=='A'){
 //			makeToast("有人要加你哦亲...");
