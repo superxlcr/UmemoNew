@@ -9,4 +9,9 @@ Umemo是一款特别的智能备忘录。我们在生活中可能会忘记各种
 
 ## 其他事项
 最低Android版本：4.1
+
 由于现在服务器已经关闭，因此只提供单机版本下载体验：https://github.com/superxlcr/UmemoNew/blob/master/bin/UmemoNew.apk
+
+### 单机版本注意事项
+1.单机版本注册直接在本机注册
+2.单机版本只能添加固定测试好友friend1，friend2，friend3
