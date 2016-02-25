@@ -68,6 +68,7 @@ public class RegisterActivity extends Activity {
 
 		findView();				//find all the view to use
 
+		// 点击头像进入选择头像界面
 		Head.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -76,9 +77,10 @@ public class RegisterActivity extends Activity {
 			}
 		});
 
-		// connect to the server
-		conctTask = new connectTask();
-		conctTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+		// 服务器已弃用,故停止异步连接任务
+//		// connect to the server
+//		conctTask = new connectTask();
+//		conctTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 
 		registerButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -97,11 +99,24 @@ public class RegisterActivity extends Activity {
 					toastShow("您的用户名已被使用！");
 				else
 				{
-					//sends the message to the server
-					if (mTcpClient != null) 
-					{
-						mTcpClient.sendMessage("2 "+ Username.getText().toString() +" "+ Password.getText().toString());
-					}
+//					//sends the message to the server
+//					if (mTcpClient != null) 
+//					{
+//						mTcpClient.sendMessage("2 "+ Username.getText().toString() +" "+ Password.getText().toString());
+//					}
+					// 单机版本用户名没有冲突直接注册成功
+					toastShow("注册成功！");
+
+					String UsernameString = Username.getText().toString();
+					String PasswordString = Password.getText().toString();
+					String NicknameString = Nickname.getText().toString();
+					String PersonalSignString = PersonalSign.getText().toString();
+					String HeadId = headId;
+					db.insertLoginMessage(UsernameString, PasswordString);
+					db.changeNickname(UsernameString, NicknameString);
+					db.changePictureId(UsernameString, HeadId);
+					db.changeSignature(UsernameString, PersonalSignString);
+					RegisterActivity.this.finish();
 				}
 
 
