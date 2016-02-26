@@ -197,9 +197,12 @@ public class FriendRemindActivity extends Activity {
 		String message = protocol.generateMessages(username, friendName, title, date, time, note);
 		Log.v("FriendActivity","sending message");
 
-
-		if(TcpService!=null)
-			TcpService.sendMessage(message);
+		// 单机版本添加好友提醒默认发送镜像提醒给自己
+		if(TcpService!=null) {
+			String friendMessage = protocol.generateMessages(friendName, username, title, date, time, note + " by " + friendName);
+			TcpService.handleConnection(friendMessage);
+		}
+//			TcpService.sendMessage(message);
 		else Log.v("on click","is null");
 		
 		toastShow("您的好友提醒已发送");
