@@ -7,6 +7,9 @@ Umemo是一款特别的智能备忘录。我们在生活中可能会忘记各种
 ## 荣获奖项
 中山大学第十届软件创新开发大赛一等奖
 
+## 界面截图
+![umemo1](./photo/umemo1.png)![umemo2](./photo/umemo2.png)![umemo3](./photo/umemo3.png)![umemo4](./photo/umemo4.png)
+
 ## 其他事项
 最低Android版本：4.1
 
