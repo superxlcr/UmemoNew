@@ -10,8 +10,11 @@ Umemo是一款特别的智能备忘录。我们在生活中可能会忘记各种
 ## 界面截图
 ![umemo1](./photo/umemo1.png)![umemo2](./photo/umemo2.png)![umemo3](./photo/umemo3.png)![umemo4](./photo/umemo4.png)
 
-## 其他事项
-最低Android版本：4.1
+## 项目收获
+1.ActionBar使用与悬浮透明化
+2.AsyncTask的使用
+3.自定义侧滑菜单控件
+4.Socket网络通信
 
 由于现在服务器已经关闭，因此只提供单机版本下载体验：https://github.com/superxlcr/UmemoNew/blob/master/bin/UmemoNew.apk
 
