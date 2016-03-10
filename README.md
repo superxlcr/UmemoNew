@@ -15,6 +15,8 @@ Umemo是一款特别的智能备忘录。我们在生活中可能会忘记各种
 2.AsyncTask的使用
 3.自定义侧滑菜单控件
 4.Socket网络通信
+5.自定义滑动锁屏画面
+6.百度地图API使用
 
 由于现在服务器已经关闭，因此只提供单机版本下载体验：https://github.com/superxlcr/UmemoNew/blob/master/bin/UmemoNew.apk
 
